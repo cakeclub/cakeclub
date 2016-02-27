@@ -1,0 +1,9 @@
+{
+  "firebase": "luminous-inferno-3515",
+  "public": "cakeclub",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

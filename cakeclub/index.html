@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us" ng-app="cakeclubApp">
+
+<head>
+<meta charset="utf-8">
+<title>Hello...</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="js/controllers.js"></script>
+<!-- Firebase -->
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+<link href="jumbotron-narrow.css" rel="stylesheet">
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<body ng-controller='MainController'>
+
+<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <!--<li role="presentation"><a href="cats.html">Cats</a></li>-->
+          </ul>
+        </nav>
+        <h3 class="text-muted">Cake Club</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Next: {{currentClubber.name}}</h1>
+        <p><a class="btn btn-lg btn-success" ng-click="nextClubber()">Confirm Had Baked</a></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+        	<table class="table table-striped">
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Action</th>
+				</tr>
+				<tr ng-repeat="clubber in cakeclubbers">
+					<td>{{clubber.name}}</td>
+					<td>{{clubber.email}}</td>
+					<td><button class="btn btn-danger" ng-click=cakeclubbers.$remove(clubber)>Remove</button></td>
+				</tr>
+				<tr>
+					<td><input class="form-control" maxlength="20" ng-model="newName" placeholder="Name"/></td>
+					<td><input class="form-control" maxlength="50" ng-model="email" placeholder="Email"/></td>
+					<td><button class="btn btn-success" ng-click="addClubber()">Add Clubber</button></td>
+				</tr>
+			</table>
+        </div>
+      </div>
+      
+      
+      <div class="row marketing">
+        <div class="col-lg-6">
+        	<h2>Cat Tax</h2>
+        	<img src=https://thecatapi.com/api/images/get></img>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2015 Cakers, Inc.</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+</body>
+</html>
