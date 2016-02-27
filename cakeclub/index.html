@@ -47,17 +47,10 @@
 				<tr>
 					<th>Name</th>
 					<th>Email</th>
-					<th>Action</th>
 				</tr>
 				<tr ng-repeat="clubber in cakeclubbers">
 					<td>{{clubber.name}}</td>
 					<td>{{clubber.email}}</td>
-					<td><button class="btn btn-danger" ng-click=cakeclubbers.$remove(clubber)>Remove</button></td>
-				</tr>
-				<tr>
-					<td><input class="form-control" maxlength="20" ng-model="newName" placeholder="Name"/></td>
-					<td><input class="form-control" maxlength="50" ng-model="email" placeholder="Email"/></td>
-					<td><button class="btn btn-success" ng-click="addClubber()">Add Clubber</button></td>
 				</tr>
 			</table>
         </div>
